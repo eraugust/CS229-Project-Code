@@ -108,7 +108,7 @@ max_failures = 400
 
 # Initialize a cart pole
 nn = neural.net()
-nn.load_params('trained4.npz')
+nn.load_params('trained7.npz')
 p = physics.pendulum()
 p.reset()
 
@@ -335,4 +335,4 @@ plt.plot(np.arange(len(mean_error)), mean_error)
 plt.show()
 
 print('mean error: ' + str(sum(mean_error[200:]) / (len(mean_error)-200+1)))
-print('mean error: ' + str(sum(time_steps_to_failure[200:])/(len(time_steps_to_failure)-200+1)))
+print('accuracy: ' + str(sum(time_steps_to_failure[200:])/(len(time_steps_to_failure)-200+1)))

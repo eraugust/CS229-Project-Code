@@ -25,12 +25,12 @@ class pendulum:
         # rot symmetry  => MOI in two principal axes are equal
         J1 = 2.48e-2;
         J2 = 3.86e-3;
-        J1_mat = [    [0, 0,     0],    \
-                    [0, J1, 0], \
-                    [0, 0, J1]    ];
-        J2_mat = [    [0, 0,  0],    \
-                    [0, J2, 0],    \
-                    [0, 0, J2]    ];
+        J1_mat = [  [0, 0,  0],     \
+                    [0, J1, 0],     \
+                    [0, 0, J1]      ];
+        J2_mat = [  [0, 0,  0],     \
+                    [0, J2, 0],     \
+                    [0, 0, J2]      ];
         # storing     J0_hat = J1 + m1*l1^2 + m2*L1^2 
         # and         J2_hat = J2 + m2*l2^2
         self.inertia = numpy.array(                                    [\
@@ -41,8 +41,6 @@ class pendulum:
         self.num_theta_states = 4
         self.num_dtheta_states = 4
         self.num_states = self.num_theta_states*self.num_dtheta_states+1
-        # self.theta_lim = math.pi/180*numpy.array([150, 210])
-        # self.dtheta_lim = math.pi/180*numpy.array([-15, 15])
         self.theta_lim = math.pi*150/180
         self.dtheta_lim = math.pi*15/180
         self.torque = numpy.array([0, 0]);
@@ -51,10 +49,10 @@ class pendulum:
         self.dtheta = numpy.array([0, 0]);
         self.ddtheta = numpy.array([0, 0]);
         self.dt = 0.1 # 100 ms update time
-        self.trajectory = [    self.theta.tolist()        +\
-                            self.dtheta.tolist()    +\
-                            self.ddtheta.tolist()    +\
-                            self.torque.tolist()    ];
+        self.trajectory = [     self.theta.tolist()     +\
+                                self.dtheta.tolist()    +\
+                                self.ddtheta.tolist()   +\
+                                self.torque.tolist()    ];
         #############        Image params    ###################
         self.h = 64
         self.w = 48
