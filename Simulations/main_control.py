@@ -345,10 +345,4 @@ plt.plot(np.arange(len(mean_error)), mean_error)
 plt.show()
 
 print('mean error: ' + str(sum(mean_error[200:]) / (len(mean_error)-200+1)))
-<<<<<<< HEAD
 print('accuracy: ' + str(sum(time_steps_to_failure[200:])/(len(time_steps_to_failure)-200+1)))
-=======
-print('mean error: ' + str(sum(time_steps_to_failure[200:])/(len(time_steps_to_failure)-200+1)))
-
-
->>>>>>> 9826c4e6b729a42ad92700c4d5342682866e51bc
